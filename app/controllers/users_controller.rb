@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
-
   before_action :authenticate_user!
 
-  # Only users and admins can edit user's profile
   def edit
   end
-
+  
   def show
      @user = User.find(params[:id])
   end
