@@ -8,9 +8,9 @@ class SectionsController < ApplicationController
 
   def create
     @section = current_category.sections.create(section_params)
-
+    @category_target = '#'+"category#{current_category.id}"
     if @section.valid?
-      redirect_to category_path(current_category)
+      redirect_to proc {"#{categories_path}#{@category_target}"}
     else
       render :new, status: :unprocessable_entity
     end

@@ -9,6 +9,7 @@ class CategoriesController < ApplicationController
 
   def index
     @category = Category.all
+    @section = Section.new
   end
 
   def show
