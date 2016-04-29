@@ -12,12 +12,6 @@ class CategoriesController < ApplicationController
     @section = Section.new
   end
 
-  def show
-    @category = Category.find(params[:id])
-    @section = Section.new
-  end
-
-
   def create
     @category = Category.create(category_params)
 

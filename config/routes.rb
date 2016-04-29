@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'press' => 'static_pages#press'
   get 'terms' => 'static_pages#terms'
 
-  resources :categories, only: [:new, :create, :index, :show] do
+  resources :categories, only: [:new, :create, :index] do
     resources :sections, only: [:new, :create]
   end
 
