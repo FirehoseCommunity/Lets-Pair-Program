@@ -1,12 +1,8 @@
 <div class="listbox col-xs-10 col-xs-offset-1">
-  <div class="">
-    <h4>
-
-    <% if current_user.admin %>
-      <%= link_to "Add New Category", new_category_path %> &lt;
-    <% end %>
-
-    </h4>
+  <div>
+    <h4><% if current_user.admin %>
+      <span class="pull-right" roll="button"><%= link_to "add category", new_category_path %></span>
+    <% end %></h4>
   </div>
   <br />
   <br />
@@ -24,7 +20,7 @@
 
           <% if current_user.admin %>
             <!-- button to trigger new section modal -->
-            <button class="pull-right new-section-button" data-toggle="modal" data-target="#newSectionModal" data-section-url="<%= category_sections_path(category) %>">add section</button>
+            <span class="pull-right"><a role="button" data-toggle="modal" data-target="#newSectionModal" data-section-url="<%= category_sections_path(category) %>">add section</a></span>
           <% end %>
       </h3>
     </div>
