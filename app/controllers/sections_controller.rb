@@ -8,9 +8,11 @@ class SectionsController < ApplicationController
 
   def create
     @section = current_category.sections.create(section_params)
-
+    # @category_target = '#'+"category#{current_category.id}"
+    # # To re-enable these commented options remember to go update the sections_controller_spec
     if @section.valid?
-      redirect_to category_path(current_category)
+      # redirect_to proc {"#{categories_path}#{@category_target}"}
+      redirect_to categories_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +27,5 @@ class SectionsController < ApplicationController
   def current_category
     @current_category = Category.find(params[:category_id])
   end
-
-
 
 end

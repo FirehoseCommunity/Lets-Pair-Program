@@ -9,13 +9,8 @@ class CategoriesController < ApplicationController
 
   def index
     @category = Category.all
-  end
-
-  def show
-    @category = Category.find(params[:id])
     @section = Section.new
   end
-
 
   def create
     @category = Category.create(category_params)

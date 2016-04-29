@@ -32,7 +32,7 @@ RSpec.describe SectionsController, type: :controller do
       sign_in user
       assert user.admin?
       post :create, :category_id => test_category, section: {name: 'Intros', description: "A place for intros"}
-      expect(response).to redirect_to category_path(test_category)
+      expect(response).to redirect_to categories_path
 
       section = Section.last
       expect(section.name).to eq("Intros")

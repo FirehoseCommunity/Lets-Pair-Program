@@ -310,6 +310,16 @@ p {
   background-color: #8B9F23;
 }
 
+h4 > span.pull-right > a {
+  font-size: 10px;
+  font-weight: bold;
+  color: #EEEEEE !important;
+  border-radius: 18px;
+  background-color: #8b9f23;
+  padding: 8px 10px;
+  text-transform: uppercase;
+}
+
 .custom {
   outline: none !important;
   border-radius: 0 !important;
@@ -338,7 +348,6 @@ p {
     font-weight: bolder;
   }
 
-
   .nested-panel-heading  { // section heading
     border-radius: 0 !important;
     margin: 0 !important;
@@ -353,7 +362,7 @@ p {
       color: #535F15 !important;
     }
 
-    .panel-title span a {
+    .panel-title span a{
     font-size: 10px;
     font-weight: bold;
     color: #EEEEEE !important;
@@ -361,6 +370,7 @@ p {
     background-color: #5d6367;
     padding: 8px 10px;
     }
+
   }
 
   .panel-default {
