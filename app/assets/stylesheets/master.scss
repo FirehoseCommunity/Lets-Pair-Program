@@ -24,17 +24,18 @@ html {
 .navbar-default {
   background-color: #1D1F20;
   border: transparent !important;
+  height: 60px;
 }
 
 .navbar-default .container-fluid{
   background-color: #1D1F20;
+  height: 60px;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form{
   background-color: #1D1F20;
   border-radius: 0;
   background-image: none;
-  height: 60px;
   padding-top: 5px;
   border: transparent;
 }
