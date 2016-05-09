@@ -20,7 +20,8 @@
 
           <% if current_user.admin %>
             <!-- button to trigger new section modal -->
-            <span class="pull-right"><a role="button" data-toggle="modal" data-target="#newSectionModal" data-section-url="<%= category_sections_path(category) %>">add section</a></span>
+<!--             <button class="pull-right new-section-button" data-toggle="modal" data-target="#newSectionModal" data-section-url="<%= category_sections_path(category) %>">add section</button> -->
+            <span class="pull-right new-section-button"><a role="button" data-toggle="modal" data-target="#newSectionModal" data-section-url="<%= category_sections_path(category) %>">add section</a></span>
           <% end %>
       </h3>
     </div>
@@ -48,6 +49,8 @@
 <!-- Accordion feature-->
 
 <script>
+  $(document).ready(function(){$(":target").collapse();});
+  //above SHOULD expand target category accordion on page load - works in console
   $(function() {
     $('.new-section-button').click(function( event ) {
       var postSectionURL = $(event.target).data('section-url');
