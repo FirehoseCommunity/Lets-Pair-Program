@@ -1,8 +1,16 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :reply]
+  before_action :confirm_admin, only: [:destroy]
 
 	def index
     @categories = Category.all
+	end
+	
+	def destroy
+	  @post = Post.find_by_id(params[:id])
+	  @post.destroy
+	  flash[:notice] = "Post deleted."
+	  redirect_to categories_path
 	end
 
   def new

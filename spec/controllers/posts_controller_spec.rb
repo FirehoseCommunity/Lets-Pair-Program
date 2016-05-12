@@ -107,4 +107,23 @@ RSpec.describe PostsController, type: :controller do
       expect(reply.user).to eq(user)
     end    
   end
+  
+  describe "post#destroy" do
+      it "should delete the post from the database" do
+          post = FactoryGirl.create(:post)
+          delete :destroy, id: post.id
+          expect(response).to redirect_to categories_path
+          post = Post.find_by_id(post.id)
+          expect(post).to eq nil
+      end
+      
+      it "should allow an admin to delete a post" do
+        post = FactoryGirl.create(:post)
+        user = FactoryGirl.create(:user, admin: true)
+        sign_in user
+        assert user.admin?
+        delete :destroy, id: post.id
+        expect(response).to redirect_to categories_path
+      end
+  end
 end
